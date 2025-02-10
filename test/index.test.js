@@ -1,14 +1,15 @@
 const request = require('supertest');
-const app = require('../index'); // ✅ 确保 index.js 里正确导出了 app
-const server = app.listen(); // ✅ 启动服务器实例
+const app = require('../index'); // 导入 app
+const server = app.listen(3000); // 启动服务器并监听 3000 端口
 
+// 在所有测试完成后关闭服务器
 afterAll(() => {
-  server.close(); // ✅ 确保 Jest 退出时关闭服务器，避免 Jest 超时
+  server.close(); // 关闭服务器
 });
 
 describe('GET /', () => {
   it('should return "Hello World!"', async () => {
-    const response = await request(server).get('/'); // ✅ 这样 supertest 才能正确使用
+    const response = await request(server).get('/'); // 使用服务器实例进行请求
     expect(response.text).toBe('Hello World!');
     expect(response.status).toBe(200);
   });
