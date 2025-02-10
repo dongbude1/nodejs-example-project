@@ -27,10 +27,10 @@ jobs:
     # 构建 Docker 镜像
     - name: Build Docker image
       run: |
-        docker build -t your-dockerhub-username/your-image-name:latest .
+        docker build -t ddph/dph:latest .
 
     # 推送 Docker 镜像到 Docker Hub
     - name: Push Docker image
       run: |
-        docker push your-dockerhub-username/your-image-name:latest
+        docker push ddph/dph:latest
 
