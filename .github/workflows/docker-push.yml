@@ -30,10 +30,10 @@ jobs:
       # 4. Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/nodejs-example-project:latest .
+          docker build -t ddph/dph:latest .
 
       # 5. Push the Docker image to Docker Hub
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/nodejs-example-project:latest
+          docker push ddph/dph:latest
 
