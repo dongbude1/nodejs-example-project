@@ -2,7 +2,7 @@
 FROM nginx:latest
 
 # 将自定义的 index.html 复制到 NGINX 默认的 HTML 目录
-COPY index.html /usr/share/nginx/html/
+COPY ./index.html /usr/share/nginx/html/
 
 # 暴露 NGINX 默认的 80 端口
 EXPOSE 80
